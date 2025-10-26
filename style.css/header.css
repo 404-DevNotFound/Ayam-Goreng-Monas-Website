@@ -6,11 +6,12 @@
 
 body {
     font-family: Arial, sans-serif;
+    height: 3000px;
 }
 
 .header {
     display: flex;
-    height: 80px;
+    height: 60px;
     background-color: white;
     justify-content: space-between;
     align-items: center;
@@ -24,20 +25,8 @@ body {
     align-items: center;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.restaurant-logo {
-    height: 80px;
-    width: 80px;
-    object-fit: contain;
-}
-
 .restaurant-name {
-    font-size: 20px;
+    font-size: 16px;
     color: #c41e3a;
     font-weight: bold;
     letter-spacing: 1px;
@@ -52,7 +41,7 @@ body {
 .nav {
     text-decoration: none;
     color: #000000;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     padding: 8px 0px;
