@@ -1,3 +1,6 @@
+// konek file database kesini // ambil data dari databasenya kesini disimpan di
+satu variabel
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,6 +8,7 @@
     <link rel="stylesheet" href="/style.css/header.css" />
     <link rel="stylesheet" href="/style.css/home.css" />
     <link rel="stylesheet" href="/style.css/menu.css" />
+    <link rel="stylesheet" href="/style.css/location.css" />
   </head>
   <body>
     <section class="header">
@@ -16,7 +20,6 @@
         <a href="#menu" class="nav menu">Menu</a>
         <a href="#review" class="nav review">Review</a>
         <a href="#location" class="nav location">Location</a>
-        <a href="#about" class="nav about">About</a>
       </div>
     </section>
     <section class="pages">
@@ -111,19 +114,60 @@
           </div>
         </div>
       </section>
-      <div class="review-page">
-        <div class="teks-review"></div>
-        <div class="review-1"></div>
-        <div class="review-2"></div>
-        <div class="review-3"></div>
-      </div>
-      <div class="location-page"></div>
-      <div class="about-page">
-        <div class="about-left"></div>
-        <div class="about-middle"></div>
-        <div class="about-right"></div>
-        <div class="about-downn"></div>
-      </div>
+      <section class="review-page">
+        <div class="review-page" id="review">
+          <h2>Review Pelanggan</h2>
+
+          <div class="review-list">
+            // untuk menampilkan data dari database yang kamu simpan dalam
+            variabel di atas tadi
+          </div>
+
+          <div class="review-form">// jangan diisi dulu, ini buat nanti</div>
+        </div>
+      </section>
+      <section class="location-page" id="location">
+        <h1 class="location-title">Lokasi Kami</h1>
+
+        <div class="location-container">
+          <div class="location-info">
+            <h2>KUNJUNGI TEMPAT KAMI</h2>
+            <p>
+              Temukan kelezatan ayam goreng legendaris kami di lokasi Samarinda
+              Square, Samarinda, Kalimantan Timur
+            </p>
+
+            <div class="address-list">
+              <div class="address-item">
+                <div class="address-content">
+                  <h3>Cabang 1</h3>
+                  <p>Robinson Mart Samarida Square</p>
+                </div>
+              </div>
+
+              <div class="address-item">
+                <div class="address-content">
+                  <h3>Cabang 2</h3>
+                  <p>Lembuswana Mall</p>
+                </div>
+              </div>
+
+              <div class="address-item">
+                <div class="address-content">
+                  <h3>Cabang 3</h3>
+                  <p>Samarinda Central Plaza (SCP)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="open-hours">
+              <p>Buka Setiap Hari</p>
+            </div>
+          </div>
+
+          <div class="location-map"></div>
+        </div>
+      </section>
     </section>
   </body>
 </html>
