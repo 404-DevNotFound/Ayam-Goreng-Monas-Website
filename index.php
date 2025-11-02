@@ -13,6 +13,7 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
     <link rel="stylesheet" href="./style.css/location.css" />
     <link rel="stylesheet" href="./style.css/review.css" />
     <link rel="stylesheet" href="./style.css/home.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <section class="header">
@@ -29,11 +30,11 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
     <section class="pages">
       <section class="home-page">
         <div class="home-page-container">
-          <img
-            class="background-home"
-            src="./source/Background/Back2.jpg"
-            alt="Background-2"
-          />
+           <div class="background-slider-wrapper">
+            <img src="./source/Background/Back1.jpg" alt="Background Restoran 1">
+            <img src="./source/Background/Back2.jpg" alt="Background Restoran 2">
+            <img src="./source/Background/Back3.jpg" alt="Background Restoran 3">
+          </div>
           <div class="restaurant-logo">
             <img
               class="restaurant-image"
