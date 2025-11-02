@@ -1,16 +1,18 @@
-// konek file database kesini // ambil data dari databasenya kesini disimpan di
-satu variabel
+<?php
+include "koneksi.php";
 
-<!-- coba -->
+$reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test Ayam Goreng Monas</title>
+    <title>Ayam Goreng Monas</title>
     <link rel="stylesheet" href="./style.css/header.css" />
-    <link rel="stylesheet" href="./style.css/home.css" />
     <link rel="stylesheet" href="./style.css/menu.css" />
     <link rel="stylesheet" href="./style.css/location.css" />
-    <script src="./script.js" defer></script> </script>
+    <link rel="stylesheet" href="./style.css/review.css" />
+    <link rel="stylesheet" href="./style.css/home.css" />
   </head>
   <body>
     <section class="header">
@@ -27,11 +29,11 @@ satu variabel
     <section class="pages">
       <section class="home-page">
         <div class="home-page-container">
-          <div class="background-slider-wrapper">
-            <img src="./source/Background/Back1.jpg" alt="Background Restoran 1">
-            <img src="./source/Background/Back2.jpg" alt="Background Restoran 2">
-            <img src="./source/Background/Back3.jpg" alt="Background Restoran 3">
-          </div>
+          <img
+            class="background-home"
+            src="./source/Background/Back2.jpg"
+            alt="Background-2"
+          />
           <div class="restaurant-logo">
             <img
               class="restaurant-image"
@@ -121,8 +123,13 @@ satu variabel
           <h2>Review Pelanggan</h2>
 
           <div class="review-list">
-            // untuk menampilkan data dari database yang kamu simpan dalam
-            variabel di atas tadi
+              <?php while($row = mysqli_fetch_assoc($reviews)) { ?>
+                  <div class="review-card">
+                      <h4><?php echo $row['nama']; ?> ⭐<?php echo $row['rating']; ?></h4>
+                      <p><?php echo $row['komentar']; ?></p>
+                      <small><?php echo $row['tanggal']; ?></small>
+                  </div>
+              <?php } ?>
           </div>
 
           <div class="review-form">// jangan diisi dulu, ini buat nanti</div>
