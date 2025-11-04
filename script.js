@@ -1,214 +1,337 @@
 // Simple menu slider for the `.menu-container` / `.menu-card` structure in index.html
 // Features: auto-play, prev/next buttons, pause on hover, keyboard arrows
-document.addEventListener('DOMContentLoaded', function () {
-	const container = document.querySelector('.menu-container');
-	if (!container) return; // nothing to do if menu container not found
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".menu-container");
+  if (!container) return; // nothing to do if menu container not found
 
-	const cards = Array.from(container.querySelectorAll('.menu-card'));
-	if (cards.length <= 1) return; // no need to enable slider for one or zero items
+  const cards = Array.from(container.querySelectorAll(".menu-card"));
+  if (cards.length <= 1) return; // no need to enable slider for one or zero items
 
-	// Ensure parent can position the buttons absolutely
-	const parent = container.parentElement;
-	if (parent && getComputedStyle(parent).position === 'static') {
-		parent.style.position = 'relative';
-	}
+  // Ensure parent can position the buttons absolutely
+  const parent = container.parentElement;
+  if (parent && getComputedStyle(parent).position === "static") {
+    parent.style.position = "relative";
+  }
 
-	// Create control buttons
-	function createBtn(className, label) {
-		const btn = document.createElement('button');
-		btn.type = 'button';
-		btn.className = className;
-		btn.innerText = label;
-		Object.assign(btn.style, {
-			position: 'absolute',
-			top: '50%',
-			transform: 'translateY(-50%)',
-			zIndex: '12',
-			background: 'rgba(0,0,0,0.45)',
-			color: '#fff',
-			border: 'none',
-			padding: '8px 10px',
-			cursor: 'pointer',
-			borderRadius: '4px',
-			fontSize: '16px',
-		});
-		return btn;
-	}
+  // Create control buttons
+  function createBtn(className, label) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = className;
+    btn.innerText = label;
+    Object.assign(btn.style, {
+      position: "absolute",
+      top: "50%",
+      transform: "translateY(-50%)",
+      zIndex: "12",
+      background: "rgba(0,0,0,0.45)",
+      color: "#fff",
+      border: "none",
+      padding: "8px 10px",
+      cursor: "pointer",
+      borderRadius: "4px",
+      fontSize: "16px",
+    });
+    return btn;
+  }
 
-	const prevBtn = createBtn('menu-prev', '\u2039'); // ‹
-	const nextBtn = createBtn('menu-next', '\u203A'); // ›
-	prevBtn.style.left = '8px';
-	nextBtn.style.right = '8px';
-	parent.appendChild(prevBtn);
-	parent.appendChild(nextBtn);
+  const prevBtn = createBtn("menu-prev", "\u2039"); // ‹
+  const nextBtn = createBtn("menu-next", "\u203A"); // ›
+  prevBtn.style.left = "8px";
+  nextBtn.style.right = "8px";
+  parent.appendChild(prevBtn);
+  parent.appendChild(nextBtn);
 
-	// Ensure container scrolls horizontally and cards line up
-	container.style.overflowX = 'auto';
-	container.style.scrollBehavior = 'smooth';
-	container.style.whiteSpace = 'nowrap';
-	container.style.paddingBottom = '8px';
+  // Ensure container scrolls horizontally and cards line up
+  container.style.overflowX = "auto";
+  container.style.scrollBehavior = "smooth";
+  container.style.whiteSpace = "nowrap";
+  container.style.paddingBottom = "8px";
 
-	cards.forEach(function (card) {
-		// make each card render inline so horizontal scrolling works
-		card.style.display = 'inline-block';
-		card.style.verticalAlign = 'top';
-		// optionally clamp width to make each card similar in size (if you want)
-		// card.style.width = card.style.width || '240px';
-		card.style.marginRight = card.style.marginRight || '12px';
-	});
+  cards.forEach(function (card) {
+    // make each card render inline so horizontal scrolling works
+    card.style.display = "inline-block";
+    card.style.verticalAlign = "top";
+    // optionally clamp width to make each card similar in size (if you want)
+    // card.style.width = card.style.width || '240px';
+    card.style.marginRight = card.style.marginRight || "12px";
+  });
 
-	// Get width of one card including margin
-	function getCardWidth() {
-		const c = cards[0];
-		const rect = c.getBoundingClientRect();
-		const style = getComputedStyle(c);
-		const mr = parseFloat(style.marginRight) || 0;
-		return rect.width + mr;
-	}
+  // Get width of one card including margin
+  function getCardWidth() {
+    const c = cards[0];
+    const rect = c.getBoundingClientRect();
+    const style = getComputedStyle(c);
+    const mr = parseFloat(style.marginRight) || 0;
+    return rect.width + mr;
+  }
 
-	// Slider controls
-	function scrollNext() {
-		const step = getCardWidth();
-		if (Math.ceil(container.scrollLeft + container.clientWidth) >= container.scrollWidth - 1) {
-			container.scrollTo({ left: 0, behavior: 'smooth' });
-		} else {
-			container.scrollBy({ left: step, behavior: 'smooth' });
-		}
-	}
-	function scrollPrev() {
-		const step = getCardWidth();
-		if (container.scrollLeft <= 0) {
-			container.scrollTo({ left: container.scrollWidth - container.clientWidth, behavior: 'smooth' });
-		} else {
-			container.scrollBy({ left: -step, behavior: 'smooth' });
-		}
-	}
+  // Slider controls
+  function scrollNext() {
+    const step = getCardWidth();
+    if (
+      Math.ceil(container.scrollLeft + container.clientWidth) >=
+      container.scrollWidth - 1
+    ) {
+      container.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: step, behavior: "smooth" });
+    }
+  }
+  function scrollPrev() {
+    const step = getCardWidth();
+    if (container.scrollLeft <= 0) {
+      container.scrollTo({
+        left: container.scrollWidth - container.clientWidth,
+        behavior: "smooth",
+      });
+    } else {
+      container.scrollBy({ left: -step, behavior: "smooth" });
+    }
+  }
 
-	prevBtn.addEventListener('click', function () {
-		scrollPrev();
-		resetAutoPlay();
-	});
-	nextBtn.addEventListener('click', function () {
-		scrollNext();
-		resetAutoPlay();
-	});
+  prevBtn.addEventListener("click", function () {
+    scrollPrev();
+    resetAutoPlay();
+  });
+  nextBtn.addEventListener("click", function () {
+    scrollNext();
+    resetAutoPlay();
+  });
 
-	// keyboard support
-	document.addEventListener('keydown', function (e) {
-		if (e.key === 'ArrowRight') { scrollNext(); resetAutoPlay(); }
-		if (e.key === 'ArrowLeft') { scrollPrev(); resetAutoPlay(); }
-	});
+  // keyboard support
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") {
+      scrollNext();
+      resetAutoPlay();
+    }
+    if (e.key === "ArrowLeft") {
+      scrollPrev();
+      resetAutoPlay();
+    }
+  });
 
-	// Auto-play with pause on hover/focus
-	var autoPlayInterval = 3000; // ms
-	var autoPlayTimer = null;
-	var isPaused = false;
+  // Auto-play with pause on hover/focus
+  var autoPlayInterval = 3000; // ms
+  var autoPlayTimer = null;
+  var isPaused = false;
 
-	function startAutoPlay() {
-		if (autoPlayTimer) return;
-		autoPlayTimer = setInterval(function () {
-			if (!isPaused) scrollNext();
-		}, autoPlayInterval);
-	}
-	function stopAutoPlay() {
-		if (autoPlayTimer) { clearInterval(autoPlayTimer); autoPlayTimer = null; }
-	}
-	function resetAutoPlay() {
-		stopAutoPlay();
-		startAutoPlay();
-	}
+  function startAutoPlay() {
+    if (autoPlayTimer) return;
+    autoPlayTimer = setInterval(function () {
+      if (!isPaused) scrollNext();
+    }, autoPlayInterval);
+  }
+  function stopAutoPlay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+    }
+  }
+  function resetAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
 
-	[container, prevBtn, nextBtn].forEach(function (el) {
-		el.addEventListener('mouseenter', function () { isPaused = true; stopAutoPlay(); });
-		el.addEventListener('mouseleave', function () { isPaused = false; startAutoPlay(); });
-		el.addEventListener('focusin', function () { isPaused = true; stopAutoPlay(); });
-		el.addEventListener('focusout', function () { isPaused = false; startAutoPlay(); });
-	});
+  [container, prevBtn, nextBtn].forEach(function (el) {
+    el.addEventListener("mouseenter", function () {
+      isPaused = true;
+      stopAutoPlay();
+    });
+    el.addEventListener("mouseleave", function () {
+      isPaused = false;
+      startAutoPlay();
+    });
+    el.addEventListener("focusin", function () {
+      isPaused = true;
+      stopAutoPlay();
+    });
+    el.addEventListener("focusout", function () {
+      isPaused = false;
+      startAutoPlay();
+    });
+  });
 
-	startAutoPlay();
+  startAutoPlay();
 });
 
-	// --- clickable enhancements: click card to focus + dot indicators ---
-	document.addEventListener('DOMContentLoaded', function () {
-		const container = document.querySelector('.menu-container');
-		if (!container) return;
-		const cards = Array.from(container.querySelectorAll('.menu-card'));
-		if (cards.length <= 1) return;
+// --- clickable enhancements: click card to focus + dot indicators ---
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".menu-container");
+  if (!container) return;
+  const cards = Array.from(container.querySelectorAll(".menu-card"));
+  if (cards.length <= 1) return;
 
-		// create dots wrapper
-		const parent = container.parentElement;
-		let dotsWrap = parent.querySelector('.menu-dots');
-		if (!dotsWrap) {
-			dotsWrap = document.createElement('div');
-			dotsWrap.className = 'menu-dots';
-			Object.assign(dotsWrap.style, {
-				textAlign: 'center',
-				marginTop: '10px',
-				position: 'relative',
-				zIndex: '10'
-			});
-			parent.appendChild(dotsWrap);
-		}
+  // create dots wrapper
+  const parent = container.parentElement;
+  let dotsWrap = parent.querySelector(".menu-dots");
+  if (!dotsWrap) {
+    dotsWrap = document.createElement("div");
+    dotsWrap.className = "menu-dots";
+    Object.assign(dotsWrap.style, {
+      textAlign: "center",
+      marginTop: "10px",
+      position: "relative",
+      zIndex: "10",
+    });
+    parent.appendChild(dotsWrap);
+  }
 
-		// const dots = [];
-		// cards.forEach(function (_, i) {
-		// 	const d = document.createElement('button');
-		// 	d.type = 'button';
-		// 	d.className = 'menu-dot';
-		// 	d.setAttribute('data-index', String(i));
-		// 	Object.assign(d.style, {
-		// 		display: 'inline-block',
-		// 		width: '10px',
-		// 		height: '10px',
-		// 		margin: '0 6px',
-		// 		borderRadius: '50%',
-		// 		border: 'none',
-		// 		background: 'rgba(0,0,0,0.25)',
-		// 		cursor: 'pointer',
-		// 		padding: '0'
-		// 	});
-		// 	dotsWrap.appendChild(d);
-		// 	dots.push(d);
-		// 	d.addEventListener('click', function () {
-		// 		const idx = parseInt(this.getAttribute('data-index'));
-		// 		const card = cards[idx];
-		// 		if (card) {
-		// 			container.scrollTo({ left: card.offsetLeft, behavior: 'smooth' });
-		// 		}
-		// 	});
-		// });
+  // const dots = [];
+  // cards.forEach(function (_, i) {
+  // 	const d = document.createElement('button');
+  // 	d.type = 'button';
+  // 	d.className = 'menu-dot';
+  // 	d.setAttribute('data-index', String(i));
+  // 	Object.assign(d.style, {
+  // 		display: 'inline-block',
+  // 		width: '10px',
+  // 		height: '10px',
+  // 		margin: '0 6px',
+  // 		borderRadius: '50%',
+  // 		border: 'none',
+  // 		background: 'rgba(0,0,0,0.25)',
+  // 		cursor: 'pointer',
+  // 		padding: '0'
+  // 	});
+  // 	dotsWrap.appendChild(d);
+  // 	dots.push(d);
+  // 	d.addEventListener('click', function () {
+  // 		const idx = parseInt(this.getAttribute('data-index'));
+  // 		const card = cards[idx];
+  // 		if (card) {
+  // 			container.scrollTo({ left: card.offsetLeft, behavior: 'smooth' });
+  // 		}
+  // 	});
+  // });
 
-		function updateActive() {
-			const center = container.scrollLeft + container.clientWidth / 2;
-			let closest = 0;
-			let minDiff = Infinity;
-			cards.forEach(function (c, i) {
-				const rect = c.getBoundingClientRect();
-				const cLeft = c.offsetLeft;
-				const cCenter = cLeft + rect.width / 2;
-				const diff = Math.abs(cCenter - center);
-				if (diff < minDiff) { minDiff = diff; closest = i; }
-			});
+  function updateActive() {
+    const center = container.scrollLeft + container.clientWidth / 2;
+    let closest = 0;
+    let minDiff = Infinity;
+    cards.forEach(function (c, i) {
+      const rect = c.getBoundingClientRect();
+      const cLeft = c.offsetLeft;
+      const cCenter = cLeft + rect.width / 2;
+      const diff = Math.abs(cCenter - center);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closest = i;
+      }
+    });
 
-			// set active class on cards and dots
-			cards.forEach(function (c, i) {
-				if (i === closest) c.classList.add('active-slide'); else c.classList.remove('active-slide');
-			});
-			dots.forEach(function (d, i) {
-				d.style.background = (i === closest) ? 'rgba(0,0,0,0.8)' : 'rgba(0,0,0,0.25)';
-			});
-		}
+    // set active class on cards and dots
+    cards.forEach(function (c, i) {
+      if (i === closest) c.classList.add("active-slide");
+      else c.classList.remove("active-slide");
+    });
+    dots.forEach(function (d, i) {
+      d.style.background =
+        i === closest ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,0.25)";
+    });
+  }
 
-		// update on scroll and on load
-		container.addEventListener('scroll', function () { updateActive(); });
-		window.addEventListener('resize', function () { updateActive(); });
-		updateActive();
+  // update on scroll and on load
+  container.addEventListener("scroll", function () {
+    updateActive();
+  });
+  window.addEventListener("resize", function () {
+    updateActive();
+  });
+  updateActive();
 
-		// clicking a card scrolls it into view
-		cards.forEach(function (c, i) {
-			c.style.cursor = 'pointer';
-			c.addEventListener('click', function () {
-				container.scrollTo({ left: c.offsetLeft, behavior: 'smooth' });
-			});
-		});
-	});
+  // clicking a card scrolls it into view
+  cards.forEach(function (c, i) {
+    c.style.cursor = "pointer";
+    c.addEventListener("click", function () {
+      container.scrollTo({ left: c.offsetLeft, behavior: "smooth" });
+    });
+  });
+});
+
+// map
+document.addEventListener("DOMContentLoaded", function () {
+  const centerSamarinda = [-0.5021, 117.1536];
+  const locations = [
+    {
+      name: "Cabang 1",
+      fullName: "Robinson Mart Samarinda Square",
+      coords: [-0.4948, 117.1436],
+      address: "Robinson Mart Samarinda Square, Samarinda",
+      googleMaps:
+        "https://www.google.com/maps/search/?api=1&query=-0.4948,117.1436",
+    },
+    {
+      name: "Cabang 2",
+      fullName: "Samarinda Central Plaza",
+      coords: [-0.503573, 117.155078],
+      address: "Samarinda Central Plaza, Samarinda",
+      googleMaps:
+        "https://www.google.com/maps/search/?api=1&query=-0.503573, 117.155078",
+    },
+  ];
+
+  // Inisialisasi map
+  const map = L.map("location-map").setView(centerSamarinda, 13);
+
+  // Tambahkan tile layer dari OpenStreetMap
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19,
+  }).addTo(map);
+
+  // Icon custom untuk marker (opsional)
+  const customIcon = L.icon({
+    iconUrl:
+      "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
+    shadowUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
+
+  // Tambahkan marker untuk setiap lokasi
+  locations.forEach((location) => {
+    const marker = L.marker(location.coords, { icon: customIcon }).addTo(map);
+
+    // Popup content dengan tombol navigasi
+    const popupContent = `
+      <div style="min-width: 200px; font-family: Arial, sans-serif;">
+        <h3 style="margin: 0 0 8px 0; font-size: 16px; color: #d32f2f;">
+          ${location.name}
+        </h3>
+        <p style="margin: 0 0 4px 0; font-size: 14px; font-weight: bold; color: #333;">
+          ${location.fullName}
+        </p>
+        <p style="margin: 0 0 12px 0; font-size: 13px; color: #666;">
+          ${location.address}
+        </p>
+        <a href="${location.googleMaps}" target="_blank" 
+           style="display: inline-block; width: 100%; padding: 10px; 
+                  background: #d32f2f; color: white; text-decoration: none; 
+                  border-radius: 6px; font-size: 14px; text-align: center;
+                  font-weight: bold; box-sizing: border-box;">
+          📍 Buka di Google Maps
+        </a>
+      </div>
+    `;
+
+    marker.bindPopup(popupContent);
+
+    // Langsung arahkan ke Google Maps saat marker diklik
+    marker.on("click", function () {
+      // Popup akan muncul otomatis, user bisa klik tombol atau
+      // uncomment baris bawah jika mau langsung redirect tanpa popup
+      // window.open(location.googleMaps, '_blank');
+    });
+  });
+
+  // Fit map bounds untuk menampilkan semua marker
+  const group = new L.featureGroup(
+    locations.map((loc) => L.marker(loc.coords))
+  );
+  map.fitBounds(group.getBounds().pad(0.1));
+});

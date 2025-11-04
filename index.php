@@ -13,7 +13,9 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
     <link rel="stylesheet" href="./style.css/location.css" />
     <link rel="stylesheet" href="./style.css/review.css" />
     <link rel="stylesheet" href="./style.css/home.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="./script.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
   <body>
     <section class="header">
@@ -138,7 +140,7 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
       </section>
       <section class="location-page" id="location">
         <h1 class="location-title">Lokasi Kami</h1>
-
+              <div id="location-map" class="location-map"></div>
         <div class="location-container">
           <div class="location-info">
             <h2>KUNJUNGI TEMPAT KAMI</h2>
