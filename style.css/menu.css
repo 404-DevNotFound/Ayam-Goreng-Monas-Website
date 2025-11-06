@@ -2,7 +2,7 @@
   background-color: #f3f3f3;
   padding: 60px 0px;
   text-align: center;
-  position: relative; /* Tambahkan ini agar tombol slider menempel */
+  position: relative; 
 }
 
 .teks-menu h2 {
@@ -23,13 +23,11 @@
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-
-  /* --- Tambahkan/Ubah Properti Ini --- */
-  width: 300px; /* Tentukan lebar pasti untuk satu kartu, sesuaikan jika perlu */
-  display: inline-block; /* Agar kartu berbaris horizontal */
-  vertical-align: top; /* Menjaga perataan atas tetap rapi */
-  margin-right: 15px; /* Memberi jarak antar kartu */
-  cursor: pointer; /* Sesuai script.js untuk membuatnya bisa diklik */
+  width: 300px; 
+  display: inline-block; 
+  vertical-align: top;
+  margin-right: 15px;
+  cursor: pointer;
 }
 
 .menu-card img {

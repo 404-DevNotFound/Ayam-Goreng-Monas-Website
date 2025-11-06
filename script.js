@@ -1,19 +1,15 @@
-// Simple menu slider for the `.menu-container` / `.menu-card` structure in index.html
-// Features: auto-play, prev/next buttons, pause on hover, keyboard arrows
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector(".menu-container");
-  if (!container) return; // nothing to do if menu container not found
+  if (!container) return;
 
   const cards = Array.from(container.querySelectorAll(".menu-card"));
-  if (cards.length <= 1) return; // no need to enable slider for one or zero items
+  if (cards.length <= 1) return;
 
-  // Ensure parent can position the buttons absolutely
   const parent = container.parentElement;
   if (parent && getComputedStyle(parent).position === "static") {
     parent.style.position = "relative";
   }
 
-  // Create control buttons
   function createBtn(className, label) {
     const btn = document.createElement("button");
     btn.type = "button";
@@ -35,29 +31,24 @@ document.addEventListener("DOMContentLoaded", function () {
     return btn;
   }
 
-  const prevBtn = createBtn("menu-prev", "\u2039"); // ‹
-  const nextBtn = createBtn("menu-next", "\u203A"); // ›
+  const prevBtn = createBtn("menu-prev", "\u2039");
+  const nextBtn = createBtn("menu-next", "\u203A");
   prevBtn.style.left = "8px";
   nextBtn.style.right = "8px";
   parent.appendChild(prevBtn);
   parent.appendChild(nextBtn);
 
-  // Ensure container scrolls horizontally and cards line up
   container.style.overflowX = "auto";
   container.style.scrollBehavior = "smooth";
   container.style.whiteSpace = "nowrap";
   container.style.paddingBottom = "8px";
 
   cards.forEach(function (card) {
-    // make each card render inline so horizontal scrolling works
     card.style.display = "inline-block";
     card.style.verticalAlign = "top";
-    // optionally clamp width to make each card similar in size (if you want)
-    // card.style.width = card.style.width || '240px';
     card.style.marginRight = card.style.marginRight || "12px";
   });
 
-  // Get width of one card including margin
   function getCardWidth() {
     const c = cards[0];
     const rect = c.getBoundingClientRect();
@@ -66,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return rect.width + mr;
   }
 
-  // Slider controls
   function scrollNext() {
     const step = getCardWidth();
     if (
@@ -99,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
     resetAutoPlay();
   });
 
-  // keyboard support
   document.addEventListener("keydown", function (e) {
     if (e.key === "ArrowRight") {
       scrollNext();
@@ -111,8 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Auto-play with pause on hover/focus
-  var autoPlayInterval = 3000; // ms
+  var autoPlayInterval = 3000;
   var autoPlayTimer = null;
   var isPaused = false;
 
@@ -155,14 +143,12 @@ document.addEventListener("DOMContentLoaded", function () {
   startAutoPlay();
 });
 
-// --- clickable enhancements: click card to focus + dot indicators ---
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector(".menu-container");
   if (!container) return;
   const cards = Array.from(container.querySelectorAll(".menu-card"));
   if (cards.length <= 1) return;
 
-  // create dots wrapper
   const parent = container.parentElement;
   let dotsWrap = parent.querySelector(".menu-dots");
   if (!dotsWrap) {
@@ -176,34 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     parent.appendChild(dotsWrap);
   }
-
-  // const dots = [];
-  // cards.forEach(function (_, i) {
-  // 	const d = document.createElement('button');
-  // 	d.type = 'button';
-  // 	d.className = 'menu-dot';
-  // 	d.setAttribute('data-index', String(i));
-  // 	Object.assign(d.style, {
-  // 		display: 'inline-block',
-  // 		width: '10px',
-  // 		height: '10px',
-  // 		margin: '0 6px',
-  // 		borderRadius: '50%',
-  // 		border: 'none',
-  // 		background: 'rgba(0,0,0,0.25)',
-  // 		cursor: 'pointer',
-  // 		padding: '0'
-  // 	});
-  // 	dotsWrap.appendChild(d);
-  // 	dots.push(d);
-  // 	d.addEventListener('click', function () {
-  // 		const idx = parseInt(this.getAttribute('data-index'));
-  // 		const card = cards[idx];
-  // 		if (card) {
-  // 			container.scrollTo({ left: card.offsetLeft, behavior: 'smooth' });
-  // 		}
-  // 	});
-  // });
 
   function updateActive() {
     const center = container.scrollLeft + container.clientWidth / 2;
@@ -246,7 +204,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// map
 document.addEventListener("DOMContentLoaded", function () {
   const centerSamarinda = [-0.5021, 117.1536];
   const locations = [

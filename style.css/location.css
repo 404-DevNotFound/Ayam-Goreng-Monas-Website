@@ -1,4 +1,3 @@
-/* === SECTION UTAMA === */
 .location-page {
   padding: 80px 60px;
   background-color: #f5f5f5;
@@ -8,7 +7,6 @@
   justify-content: center;
 }
 
-/* === JUDUL UTAMA === */
 .location-title {
   text-align: center;
   font-size: 48px;
@@ -19,7 +17,6 @@
   letter-spacing: -1px;
 }
 
-/* === KONTAINER UTAMA === */
 .location-container {
   display: flex;
   justify-content: space-between;
@@ -30,7 +27,6 @@
   width: 100%;
 }
 
-/* === BAGIAN INFO === */
 .location-info {
   flex: 1;
   display: flex;
@@ -56,7 +52,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* === DAFTAR ALAMAT === */
 .address-list {
   display: flex;
   flex-direction: column;
@@ -93,7 +88,6 @@
   line-height: 1.5;
 }
 
-/* === JAM OPERASIONAL === */
 .open-hours {
   margin-top: 10px;
 }
@@ -114,7 +108,6 @@
   object-fit: contain;
 }
 
-/* === BAGIAN PETA === */
 .location-map {
   flex: 1;
   min-height: 500px;
@@ -131,14 +124,12 @@
   min-height: 500px;
 }
 
-/* Styling untuk Leaflet map jika digunakan */
 .leaflet-container {
   width: 100%;
   height: 100%;
   border-radius: 15px;
 }
 
-/* === RESPONSIVE === */
 @media (max-width: 1024px) {
   .location-container {
     gap: 40px;

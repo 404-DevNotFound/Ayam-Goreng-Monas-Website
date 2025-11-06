@@ -7,6 +7,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: Arial, sans-serif;
   height: 2500px;
@@ -14,7 +15,7 @@ body {
 
 .header {
   display: flex;
-  height: 60px;
+  height: 80px;
   background-color: white;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +30,7 @@ body {
 }
 
 .restaurant-name {
-  font-size: 16px;
+  font-size: 18px;
   color: #c41e3a;
   font-weight: bold;
   letter-spacing: 1px;
@@ -44,7 +45,7 @@ body {
 .nav {
   text-decoration: none;
   color: #000000;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500px;
   cursor: pointer;
   padding: 8px 0px;

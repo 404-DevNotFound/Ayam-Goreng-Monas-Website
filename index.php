@@ -59,7 +59,7 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
         <div class="teks-menu"><h2>Menu Kami</h2></div>
         <div class="menu-container">
           <div class="menu-card">
-            <img src="./source/Daftar menu/????" alt="siomay-menu" />
+            <img src="./source/Daftar menu/Siomay.png" alt="siomay-menu" />
             <div class="menu-info">
               <h3>Siomay</h3>
               <p>Ini deskripsi Ini deskripsi Ini deskripsi</p>
@@ -89,7 +89,7 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
             </div>
           </div>
           <div class="menu-card">
-            <img src="" alt="chicken-strip-menu" />
+            <img src="./source/Daftar menu/Chicken Strip.png" alt="chicken-strip-menu" />
             <div class="menu-info">
               <h3>Chicken Strip</h3>
               <p>Ini deskripsi Ini deskripsi Ini deskripsi</p>
