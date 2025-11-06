@@ -1,34 +1,35 @@
 .menu-page {
-  background-color: #f3f3f3; 
+  background-color: #f3f3f3;
   padding: 60px 0px;
   text-align: center;
   position: relative; /* Tambahkan ini agar tombol slider menempel */
 }
 
-.teks-menu {
-  font-size: 200%;
-  font-weight: 700px;
-  margin-bottom: 40px;
-  text-align: center;
+.teks-menu h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -0.5px;
 }
-
 .menu-container {
   width: 85%;
   margin: 0 auto;
 }
 
 .menu-card {
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 
-    /* --- Tambahkan/Ubah Properti Ini --- */
-    width: 300px; /* Tentukan lebar pasti untuk satu kartu, sesuaikan jika perlu */
-    display: inline-block; /* Agar kartu berbaris horizontal */
-    vertical-align: top; /* Menjaga perataan atas tetap rapi */
-    margin-right: 15px; /* Memberi jarak antar kartu */
-    cursor: pointer; /* Sesuai script.js untuk membuatnya bisa diklik */
+  /* --- Tambahkan/Ubah Properti Ini --- */
+  width: 300px; /* Tentukan lebar pasti untuk satu kartu, sesuaikan jika perlu */
+  display: inline-block; /* Agar kartu berbaris horizontal */
+  vertical-align: top; /* Menjaga perataan atas tetap rapi */
+  margin-right: 15px; /* Memberi jarak antar kartu */
+  cursor: pointer; /* Sesuai script.js untuk membuatnya bisa diklik */
 }
 
 .menu-card img {
