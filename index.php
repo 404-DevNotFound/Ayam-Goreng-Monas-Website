@@ -175,7 +175,7 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
             </div>
 
             <div class="open-hours">
-              <p><img src ="./source/clock.png">Buka Setiap Hari </img> </p>
+              <p><img src ="./source/mingcute_time-fill.png">Buka Setiap Hari 23 </img> </p>
             </div>
           </div>
 

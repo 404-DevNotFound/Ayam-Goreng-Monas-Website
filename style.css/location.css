@@ -1,106 +1,132 @@
+/* === SECTION UTAMA === */
 .location-page {
-  padding: 80px 40px;
-  background-color: #ffffff;
+  padding: 100px 80px;
+  background-color: red;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* === JUDUL UTAMA === */
 .location-title {
   text-align: center;
-  font-size: 42px;
-  font-weight: bold;
+  font-size: 40px;
+  font-weight: 700;
+  color: #1a1a1a;
   margin-bottom: 60px;
-  color: #2c2c2c;
+  font-family: "Poppins", sans-serif;
 }
 
+/* === KONTAINER UTAMA === */
 .location-container {
   display: flex;
-  gap: 50px;
-  align-items: stretch;
-  max-width: 1400px;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
   margin: 0 auto;
+  gap: 80px;
 }
 
+/* === BAGIAN INFO === */
 .location-info {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 
 .location-info h2 {
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
   margin-bottom: 10px;
-  color: #2c2c2c;
 }
 
 .location-info > p {
   font-size: 16px;
   line-height: 1.8;
-  color: #666;
+  color: #333333;
   margin-bottom: 15px;
+  max-width: 500px;
 }
 
+/* === DAFTAR ALAMAT === */
 .address-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 12px;
 }
 
 .address-item {
   display: flex;
   align-items: flex-start;
-  gap: 15px;
-  padding: 20px;
-  background: #f8f8f8;
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  gap: 12px;
 }
 
-.address-icon {
-  width: 26px;
-  height: 26px;
+.address-item::before {
+  content: url("../source/pin.png"); /* ganti dengan icon lokasi kamu */
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
   margin-top: 2px;
 }
 
-.address-content {
-  flex: 1;
-}
-
 .address-content h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 6px;
-  color: #2c2c2c;
+  color: #000000;
+  margin-bottom: 4px;
 }
 
 .address-content p {
   font-size: 15px;
-  color: #666;
+  color: #444444;
   margin: 0;
-  line-height: 1.5;
 }
 
+/* === JAM OPERASIONAL === */
+.open-hours p {
+  font-size: 15px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.open-hours img {
+  width: 18px;
+  height: 18px;
+}
+
+/* === BAGIAN PETA === */
 .location-map {
   flex: 1;
-  border-radius: 16px;
+  min-height: 500px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  min-height: 600px;
-  position: relative;
-
-  width: 100%;
-  overflow: hidden;
-  z-index: 1;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
 }
 
-.leaflet-popup-content-wrapper {
-  border-radius: 8px;
-  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
-}
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .location-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-.leaflet-popup-content {
-  margin: 12px;
+  .location-info > p {
+    margin: 0 auto;
+  }
+
+  .address-item::before {
+    display: none;
+  }
+
+  .location-map {
+    width: 100%;
+    min-height: 400px;
+  }
 }
