@@ -14,6 +14,7 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
     <link rel="stylesheet" href="./style.css/review.css" />
     <link rel="stylesheet" href="./style.css/home.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel ="icon" type="image/png" sizes="16x16" href="./source/Logo 2.png" />
     <script src="./script.js" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
@@ -173,7 +174,7 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
             </div>
 
             <div class="open-hours">
-              <p>Buka Setiap Hari</p>
+              <p><img src ="./source/clock.png">Buka Setiap Hari </img> </p>
             </div>
           </div>
 
