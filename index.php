@@ -32,7 +32,7 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
       </div>
     </section>
     <section class="pages">
-      <section class="home-page">
+      <section class="home-page" id ="home">
         <div class="home-page-container">
            <div class="background-slider-wrapper">
             <img src="./source/Background/Back1.jpg" alt="Background Restoran 1">
@@ -52,10 +52,10 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
             Usaha kuliner yang menyajikan ayam goreng dengan cita rasa khas,
             renyah di luar dan lembut di dalam
           </div>
-          <div class="button-home">Lihat menu kami</div>
+          <div class="button-home"><a href = "#menu">Lihat menu kami</a></div>
         </div>
       </section>
-      <section class="menu-page">
+      <section class="menu-page" id="menu">
         <div class="teks-menu">Menu Kami</div>
         <div class="menu-container">
           <div class="menu-card">
