@@ -96,12 +96,24 @@
   z-index: 1;
 }
 
-/* Styling untuk popup Leaflet */
 .leaflet-popup-content-wrapper {
   border-radius: 8px;
-  box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
 }
 
 .leaflet-popup-content {
   margin: 12px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f1f1f1;
+  color: #666;
+  font-size: 14px;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
 }

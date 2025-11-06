@@ -140,7 +140,7 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
       </section>
       <section class="location-page" id="location">
         <h1 class="location-title">Lokasi Kami</h1>
-              <div id="location-map" class="location-map"></div>
+              
         <div class="location-container">
           <div class="location-info">
             <h2>KUNJUNGI TEMPAT KAMI</h2>
@@ -177,9 +177,14 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
             </div>
           </div>
 
-          <div class="location-map"></div>
+          <div class="location-map">
+            <div id="location-map" class="location-map"></div>
+          </div>
         </div>
       </section>
     </section>
+    <footer class ="footer">
+      <p>© 2024 Ayam Goreng Monas. All rights reserved by kelompok 6.</p>
+    </footer>
   </body>
 </html>

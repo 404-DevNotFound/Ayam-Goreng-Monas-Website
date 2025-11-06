@@ -220,7 +220,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // set active class on cards and dots
     cards.forEach(function (c, i) {
       if (i === closest) c.classList.add("active-slide");
       else c.classList.remove("active-slide");
@@ -231,7 +230,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // update on scroll and on load
   container.addEventListener("scroll", function () {
     updateActive();
   });
@@ -240,7 +238,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   updateActive();
 
-  // clicking a card scrolls it into view
   cards.forEach(function (c, i) {
     c.style.cursor = "pointer";
     c.addEventListener("click", function () {
@@ -271,17 +268,13 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  // Inisialisasi map
   const map = L.map("location-map").setView(centerSamarinda, 13);
-
-  // Tambahkan tile layer dari OpenStreetMap
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 19,
   }).addTo(map);
 
-  // Icon custom untuk marker (opsional)
   const customIcon = L.icon({
     iconUrl:
       "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
@@ -293,11 +286,9 @@ document.addEventListener("DOMContentLoaded", function () {
     shadowSize: [41, 41],
   });
 
-  // Tambahkan marker untuk setiap lokasi
   locations.forEach((location) => {
     const marker = L.marker(location.coords, { icon: customIcon }).addTo(map);
 
-    // Popup content dengan tombol navigasi
     const popupContent = `
       <div style="min-width: 200px; font-family: Arial, sans-serif;">
         <h3 style="margin: 0 0 8px 0; font-size: 16px; color: #d32f2f;">
@@ -321,15 +312,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     marker.bindPopup(popupContent);
 
-    // Langsung arahkan ke Google Maps saat marker diklik
     marker.on("click", function () {
-      // Popup akan muncul otomatis, user bisa klik tombol atau
-      // uncomment baris bawah jika mau langsung redirect tanpa popup
-      // window.open(location.googleMaps, '_blank');
     });
   });
 
-  // Fit map bounds untuk menampilkan semua marker
   const group = new L.featureGroup(
     locations.map((loc) => L.marker(loc.coords))
   );
