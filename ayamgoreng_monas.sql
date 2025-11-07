@@ -11,11 +11,13 @@ CREATE TABLE review (
 );
 
 INSERT INTO review (nama, komentar, rating) VALUES
-('Richard Dante', 'Ayamnya gurih banget, bumbunya meresap!', 5),
 ('Britama Putra', 'Pelayanannya cepat dan ramah.', 4),
 ('Dimas Islamay', 'Tempatnya nyaman, recommended.', 5),
 ('Richo Anan', 'Harga terjangkau, rasa enak.', 4);
 
 SELECT * FROM review
+
+
+
 
 

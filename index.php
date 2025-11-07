@@ -128,25 +128,25 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
           <h2>Review Pelanggan</h2>
           <div class="review-list">
             <?php while($row = mysqli_fetch_assoc($reviews)) { ?>
-              <div class="review-card">
-                <div class="review-header">
-                  <h4><?php echo htmlspecialchars($row['nama']); ?></h4>
-                  <span class="stars">
-                    <?php
-                      $filled = $row['rating']; 
-                      $empty = 5 - $filled;   
-                      for ($i = 0; $i < $filled; $i++) {
-                        echo '★';
-                      }
-                      for ($i = 0; $i < $empty; $i++) {
-                        echo '☆';
-                      }
-                    ?>
-                  </span>
+                <div class="review-card">
+                    <div class="stars">
+                        <?php
+                            $filled = $row['rating'];
+                            $empty = 5 - $filled;
+                            for ($i = 0; $i < $filled; $i++) echo '<span class="star filled">★</span>';
+                            for ($i = 0; $i < $empty; $i++) echo '<span class="star">★</span>';
+                        ?>
+                    </div>
+                    <p class="review-comment">
+                        “<?php echo htmlspecialchars($row['komentar']); ?>”
+                    </p>
+                    <p class="reviewer-name">
+                        <strong><?php echo htmlspecialchars($row['nama']); ?></strong>
+                    </p>
+                    <small class="review-date">
+                        <?php echo htmlspecialchars($row['tanggal']); ?>
+                    </small>
                 </div>
-                <p><?php echo htmlspecialchars($row['komentar']); ?></p>
-                <small><?php echo htmlspecialchars($row['tanggal']); ?></small>
-              </div>
             <?php } ?>
           </div>
           <div class="review-form">
@@ -192,7 +192,7 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
             </div>
 
             <div class="open-hours">
-              <p><img src ="./source/mingcute_time-fill.png">Buka Setiap Hari 23 </img> </p>
+              <p><img src ="./source/mingcute_time-fill.png">Buka Setiap Hari </img> </p>
             </div>
           </div>
 
