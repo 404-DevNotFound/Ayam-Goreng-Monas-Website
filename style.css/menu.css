@@ -3,6 +3,7 @@
   padding: 60px 0px;
   text-align: center;
   position: relative; 
+  scroll-margin-top: 80px;
 }
 
 .teks-menu h2 {

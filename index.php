@@ -123,8 +123,8 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
           </div>
         </div>
       </section>
-      <section class="review-page">
-        <div class="review-page" id="review">
+      <section class="review-page" id="review">
+        <div>
           <h2>Review Pelanggan</h2>
           <div class="review-list">
             <?php while($row = mysqli_fetch_assoc($reviews)) { ?>

@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  scroll-margin-top: 80px;
 }
 
 .location-title {

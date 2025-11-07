@@ -9,12 +9,13 @@
 
 body {
   font-family: Arial, sans-serif;
-  height: 3000px;
+  min-height: 100hv;
 }
 
 .home-page {
   position: relative;
   width: 100%;
+  scroll-margin-top: 500px;
 }
 
 .home-page-container {
