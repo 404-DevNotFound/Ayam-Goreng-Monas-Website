@@ -126,32 +126,35 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
       <section class="review-page">
         <div class="review-page" id="review">
           <h2>Review Pelanggan</h2>
-
           <div class="review-list">
             <?php while($row = mysqli_fetch_assoc($reviews)) { ?>
-                <div class="review-card">
-                    <h4>
-                        <?php echo htmlspecialchars($row['nama']); ?>
-                        <span class="stars">
-                            <?php
-                                $filled = $row['rating']; 
-                                $empty = 5 - $filled;   
-                                for ($i = 0; $i < $filled; $i++) {
-                                    echo '<span class="star filled">★</span>';
-                                }
-                                for ($i = 0; $i < $empty; $i++) {
-                                    echo '<span class="star">★</span>';
-                                }
-                            ?>
-                      </span>
-                    </h4>
-                    <p><?php echo htmlspecialchars($row['komentar']); ?></p>
-                    <small><?php echo htmlspecialchars($row['tanggal']); ?></small>
+              <div class="review-card">
+                <div class="review-header">
+                  <h4><?php echo htmlspecialchars($row['nama']); ?></h4>
+                  <span class="stars">
+                    <?php
+                      $filled = $row['rating']; 
+                      $empty = 5 - $filled;   
+                      for ($i = 0; $i < $filled; $i++) {
+                        echo '★';
+                      }
+                      for ($i = 0; $i < $empty; $i++) {
+                        echo '☆';
+                      }
+                    ?>
+                  </span>
                 </div>
+                <p><?php echo htmlspecialchars($row['komentar']); ?></p>
+                <small><?php echo htmlspecialchars($row['tanggal']); ?></small>
+              </div>
             <?php } ?>
-          </div>
-
-          <div class="review-form"></div>
+          </div>
+          <div class="review-form">
+            <button class="add-review-btn" onclick="openReviewModal()">
+              <span class="plus-icon">+</span>
+              Tambahkan Review
+            </button>
+          </div>
         </div>
       </section>
       <section class="location-page" id="location">

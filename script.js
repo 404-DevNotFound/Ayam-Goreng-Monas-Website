@@ -278,3 +278,8 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   map.fitBounds(group.getBounds().pad(0.1));
 });
+
+function openReviewModal() {
+
+  window.location.href = 'tambah-review.php';
+}
