@@ -92,11 +92,28 @@ body {
   z-index: 3;
   padding: 0px;
   margin: 0px 0px 30px 0px;
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .restaurant-image {
   width: 128px;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.restaurant-image:hover {
+  transform: rotate(5deg) scale(1.1);
 }
 
 .teks1-home {
@@ -108,6 +125,7 @@ body {
   color: white;
   text-align: center;
   margin-bottom: 0px;
+  animation: fadeInUp 1s ease-out 0.3s backwards;
 }
 
 .teks2-home {
@@ -119,6 +137,7 @@ body {
   color: white;
   text-align: center;
   margin-bottom: 35px;
+  animation: fadeInUp 1s ease-out 0.5s backwards;
 }
 
 .teks3-home {
@@ -131,6 +150,19 @@ body {
   text-align: center;
   margin-bottom: 45px;
   width: 673px;
+  max-width: 90%;
+  animation: fadeInUp 1s ease-out 0.7s backwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .button-home {
@@ -146,9 +178,74 @@ body {
   cursor: pointer;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
   border: none;
+  animation: fadeInUp 1s ease-out 0.9s backwards;
+  transition: all 0.3s ease;
+}
+
+.button-home:hover {
+  background-color: #c41e3a;
+  transform: translateY(-5px) scale(1.05); /* Naik dan membesar */
+  box-shadow: 0px 8px 30px rgba(196, 30, 58, 0.4);
+}
+
+.button-home:active {
+  transform: translateY(-2px) scale(1.02); /* Efek saat diklik */
 }
 
 .button-home a {
   text-decoration: none;
   color: #000000;
+  transition: color 0.3s ease;
+}
+
+.button-home:hover a {
+  color: white;
+}
+
+/* Responsive untuk tablet */
+@media (max-width: 768px) {
+  .teks1-home,
+  .teks2-home {
+    font-size: 48px;
+  }
+
+  .teks3-home {
+    font-size: 20px;
+    width: 90%;
+  }
+
+  .button-home {
+    padding: 14px 35px;
+    font-size: 15px;
+  }
+
+  .restaurant-image {
+    width: 100px;
+  }
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 480px) {
+  .home-page-container {
+    min-height: 600px;
+  }
+
+  .teks1-home,
+  .teks2-home {
+    font-size: 36px;
+  }
+
+  .teks3-home {
+    font-size: 18px;
+    margin-bottom: 35px;
+  }
+
+  .button-home {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+
+  .restaurant-image {
+    width: 80px;
+  }
 }

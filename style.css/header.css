@@ -10,7 +10,6 @@ html {
 
 body {
   font-family: Arial, sans-serif;
-  height: 2500px;
 }
 
 .header {
@@ -21,6 +20,14 @@ body {
   align-items: center;
   padding: 0px 40px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .header-left {
@@ -34,6 +41,11 @@ body {
   color: #c41e3a;
   font-weight: bold;
   letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+
+.restaurant-name:hover {
+  transform: scale(1.05);
 }
 
 .header-right {
@@ -46,13 +58,61 @@ body {
   text-decoration: none;
   color: #000000;
   font-size: 16px;
-  font-weight: 500px;
+  font-weight: 500;
   cursor: pointer;
   padding: 8px 0px;
   border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .nav:hover {
   color: #c41e3a;
   border-bottom: 2px solid #c41e3a;
+  transform: translateY(-2px);
+}
+
+.nav.active {
+  color: #c41e3a;
+  border-bottom: 2px solid #c41e3a;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0px 20px;
+    height: 70px;
+  }
+
+  .restaurant-name {
+    font-size: 16px;
+  }
+
+  .header-right {
+    gap: 20px;
+  }
+
+  .nav {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0px 15px;
+    height: 60px;
+  }
+
+  .restaurant-name {
+    font-size: 14px;
+  }
+
+  .header-right {
+    gap: 15px;
+  }
+
+  .nav {
+    font-size: 13px;
+    padding: 6px 0px;
+  }
 }
