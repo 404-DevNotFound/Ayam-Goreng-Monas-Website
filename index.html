@@ -12,14 +12,10 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./source/Logo 2.png"
-    />
+    <link rel="icon" type="image/png" sizes="16x16" href="./source/Logo.png" />
     <script src="./script.js" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
     <section class="header">
@@ -88,18 +84,18 @@
 
         <!-- Sosial media -->
         <div class="footer-social">
-          <a href="#" class="social-icon"
-            ><img src="./source/instagram.png" alt="Instagram"
-          /></a>
-          <a href="#" class="social-icon"
-            ><img src="./source/tiktok.png" alt="TikTok"
-          /></a>
+          <a href="#" class="social-icon"> <i data-feather="instagram"></i></a>
+          <a href="#" class="social-icon"><i data-feather="facebook"></i></a>
+          <a href="#" class="social-icon"><i data-feather="twitter"></i></a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>Copyright © 2025 Ayam Goreng Monas. Hak Cipta Dilindungi.</p>
+        <p>Copyright &copy 2025 Ayam Goreng Monas. Hak Cipta Dilindungi.</p>
       </div>
     </section>
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>
