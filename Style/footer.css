@@ -1,50 +1,44 @@
 .footer {
-  background-color: #2d2d2d;
-  color: #ffffff;
-  padding: 60px 20px 20px;
-  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 60px 8vw 20px;
+  font-family: "Roboto", sans-serif;
 }
 
 .footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 40px;
-  flex-wrap: wrap;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgb(211, 211, 211);
-}
-
-.footer-logo {
-  flex: 1;
-  min-width: 200px;
+  align-items: start;
 }
 
 .footer-logo img {
-  width: 120px;
-  height: auto;
+  width: 90px;
   margin-bottom: 10px;
 }
 
 .footer-slogan {
-  font-size: 16px;
-  font-weight: 500;
-  margin: 0;
-  color: #ffffff;
-}
-
-.footer-column {
-  flex: 1;
-  min-width: 150px;
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
 .footer-column h3 {
+  color: #000000;
   font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #ffffff;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 35px;
+  height: 2px;
+  background-color: #e74c3c;
 }
 
 .footer-column ul {
@@ -54,52 +48,42 @@
 }
 
 .footer-column ul li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .footer-column ul li a {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
-  font-size: 15px;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .footer-column ul li a:hover {
-  color: #d64531;
+  color: #e74c3c;
 }
 
 .footer-social {
   display: flex;
   gap: 15px;
-  align-items: flex-start;
-  padding-top: 28px;
+  align-items: center;
 }
 
-.social-icon {
-  display: inline-block;
-  transition: transform 0.3s ease;
+.footer-social img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s;
+  filter: none; 
 }
 
-.social-icon img {
-  width: 32px;
-  height: 32px;
-  filter: brightness(0) invert(1);
-}
-
-.social-icon:hover {
-  transform: translateY(-3px);
+.footer-social img:hover {
+  transform: scale(1.1);
+  filter: hue-rotate(-10deg) saturate(150%) brightness(1.2);
 }
 
 .footer-bottom {
-  max-width: 1200px;
-  margin: 0 auto;
+  border-top: 1px solid #000000;
+  margin-top: 40px;
+  padding-top: 15px;
   text-align: center;
-  padding-top: 30px;
-}
-
-.footer-bottom p {
+  color: #000000;
   font-size: 14px;
-  color: #aaaaaa;
-  margin: 0;
 }
-
