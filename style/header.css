@@ -20,7 +20,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 3vw; 
+  padding: 0px 3vw; 
   box-sizing: border-box; 
   overflow-x: hidden; 
 }
