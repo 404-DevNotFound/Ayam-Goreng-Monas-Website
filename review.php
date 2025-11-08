@@ -102,7 +102,12 @@ $reviews = mysqli_query($conn, "SELECT * FROM review ORDER BY id DESC");
             <?php } ?>
         </div>
       </div>
-      <div class="Card-Form"></div>
+      <div class="Submit-Review">
+        <button class="add-review-btn" onclick="openReviewModal()">
+          <span class="plus-icon">+</span>
+            Tambahkan Review Anda Sendiri
+        </button>
+      </div>
     </section>
     <section class="footer">
       <div class="footer-container">
