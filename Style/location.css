@@ -4,10 +4,12 @@
   margin-bottom: 40px;
   font-family: Arial, sans-serif;
 }
+
 .location h2 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
+
 .location-card {
   margin-top: 40px;
   display: flex;

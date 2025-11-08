@@ -1,15 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Finlandica:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-}
-
 .main-header {
   width: 100%;
   background-color: #ffffff;
@@ -20,9 +8,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 3vw; 
-  box-sizing: border-box; 
-  overflow-x: hidden; 
+  padding: 6px 3vw; 
+  height: 70px; 
+  box-sizing: border-box;
 }
 
 .header-left {
@@ -32,29 +20,36 @@ body {
 }
 
 .restaurant-logo img {
-  width: 48px;
-  height: 48px;
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
 }
 
 .restaurant-name {
+  font-family: "Finlandica", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #c0392b;
+  letter-spacing: 0.2px;
 }
 
 .header-right {
-  font-family: montserrat;
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 2vw, 2.5rem); 
+  justify-content: flex-end;
+  gap: 1.8rem; 
 }
 
 .header-right a {
   text-decoration: none;
+  font-family: "Montserrat", sans-serif;
   font-size: 15px;
   font-weight: 600;
   color: #222;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
+  line-height: 1; 
+  display: inline-block;
+  padding: 6px 0; 
 }
 
 .header-right a:hover {
@@ -65,10 +60,13 @@ body {
   .main-header {
     flex-direction: column;
     gap: 10px;
+    height: auto;
+    padding: 10px 2vw;
   }
 
   .header-right {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem;
   }
 }
