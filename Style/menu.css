@@ -1,4 +1,4 @@
-/* .menu h2 {
+.menu h2 {
   font-size: 2rem;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -7,12 +7,12 @@
   text-align: center;
 }
 
-.Card,
-.Camilan {
+.menu Card,
+.menu Camilan {
   margin-bottom: 50px;
 }
 
-h3 {
+.menu h3 {
   font-size: 1.5rem;
   margin-bottom: 25px;
   color: #2a2a2a;
@@ -79,4 +79,4 @@ h3 {
 .menu-item span.new {
   background-color: #ffebee;
   color: #c62828;
-} */
+}
