@@ -28,7 +28,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 3px;
-  height: 100%;
+  height: 90%;
   border-left: dashed 5px #d64531;
 }
 
