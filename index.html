@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Ayam Goreng Monas</title>
-    <link rel="stylesheet" href="./style.css/header.css" />
+    <link rel="stylesheet" href="./style/header.css" />
     <link rel="stylesheet" href="./style.css/menu.css" />
     <link rel="stylesheet" href="./style.css/location.css" />
     <link rel="stylesheet" href="./style.css/review.css" />
@@ -12,18 +12,16 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
-    <link rel="icon" type="image/png" sizes="16x16" href="./source/Logo.png" />
     <script src="./script.js" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
-    <section class="header">
+    <section class="main-header">
       <div class="header-left">
-        <div class="restaurant-name">AYAM GORENG MONAS</div>
         <div class="restaurant-logo">
-          <img src="./source/Logo 2.png" alt="restaurant-logo" />
+          <img src="./source/Logo.png" alt="restaurant-logo" />
         </div>
+        <div class="restaurant-name">AYAM GORENG MONAS</div>
       </div>
       <div class="header-right">
         <a href="#home" class="nav home">Home</a>
@@ -44,13 +42,11 @@
     </section>
     <section class="footer">
       <div class="footer-container">
-        <!-- Logo dan slogan -->
         <div class="footer-logo">
-          <img src="./source/Logo 2.png" alt="Ayam Goreng Monas Logo" />
+          <img src="./source/Logo.png" alt="Ayam Goreng Monas Logo" />
           <p class="footer-slogan">Jagonya Rasa</p>
         </div>
 
-        <!-- Quick Links -->
         <div class="footer-column">
           <h3>Quick Links</h3>
           <ul>
@@ -61,7 +57,6 @@
           </ul>
         </div>
 
-        <!-- Order -->
         <div class="footer-column">
           <h3>Order</h3>
           <ul>
@@ -71,7 +66,6 @@
           </ul>
         </div>
 
-        <!-- Hubungi -->
         <div class="footer-column">
           <h3>Hubungi</h3>
           <ul>
@@ -82,20 +76,19 @@
           </ul>
         </div>
 
-        <!-- Sosial media -->
         <div class="footer-social">
-          <a href="#" class="social-icon"> <i data-feather="instagram"></i></a>
-          <a href="#" class="social-icon"><i data-feather="facebook"></i></a>
-          <a href="#" class="social-icon"><i data-feather="twitter"></i></a>
+          <a href="#" class="social-icon"
+            ><img src="./source/instagram.png" alt="Instagram"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="./source/tiktok.png" alt="TikTok"
+          /></a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>Copyright &copy 2025 Ayam Goreng Monas. Hak Cipta Dilindungi.</p>
+        <p>Copyright © 2025 Ayam Goreng Monas. Hak Cipta Dilindungi.</p>
       </div>
     </section>
-    <script>
-      feather.replace();
-    </script>
   </body>
 </html>

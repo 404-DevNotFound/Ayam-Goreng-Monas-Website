@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Finlandica:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.main-header {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 3vw; 
+  box-sizing: border-box; 
+  overflow-x: hidden; 
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.restaurant-logo img {
+  width: 48px;
+  height: 48px;
+}
+
+.restaurant-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #c0392b;
+}
+
+.header-right {
+  font-family: montserrat;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 3vw; 
+  padding-right: 30px;
+}
+
+.header-right a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  transition: color 0.3s;
+}
+
+.header-right a:hover {
+  color: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
