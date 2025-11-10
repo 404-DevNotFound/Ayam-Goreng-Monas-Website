@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f6fa;
+  color: #2c3e50;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.restaurant-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ff6b6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.restaurant-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.restaurant-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 40px;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 20px 12px 45px;
+  border: 2px solid #e8eaed;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.15);
+}
+
+.search-bar::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat center;
+}
+
+.search-bar button {
+  display: none;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.setting-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.setting-button:hover {
+  background: #ff6b6b;
+}
+
+.setting-button:hover .setting-btn {
+  color: white;
+}
+
+.setting-btn {
+  width: 20px;
+  height: 20px;
+  color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+.profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.profile:hover {
+  border-color: #ff6b6b;
+  transform: scale(1.05);
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 70px;
+  width: 260px;
+  height: calc(100vh - 70px);
+  background: #ffffff;
+  padding: 30px 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.sidebar-menu li {
+  margin: 8px 20px;
+}
+
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.sidebar-menu li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 0;
+  background: #ff6b6b;
+  border-radius: 0 4px 4px 0;
+  transition: all 0.3s ease;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li.active a {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+  color: white;
+  transform: translateX(5px);
+}
+
+.sidebar-menu li a:hover::before,
+.sidebar-menu li.active a::before {
+  height: 100%;
+}
+
+/* Main Content Area */
+.main-content {
+  margin-left: 260px;
+  margin-top: 70px;
+  padding: 30px;
+  min-height: calc(100vh - 70px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .search-bar {
+    max-width: 200px;
+    margin: 0 15px;
+  }
+
+  .restaurant-name {
+    display: none;
+  }
+}
