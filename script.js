@@ -1,3 +1,4 @@
+// Carousel
 class Carousel {
   constructor() {
     this.track = document.querySelector(".carousel-track");
@@ -72,4 +73,29 @@ class Carousel {
 
 document.addEventListener("DOMContentLoaded", () => {
   new Carousel();
+});
+
+// Detail-Btn
+
+const googleMapsLinks = {
+  "AGM Mall SCP": "https://maps.app.goo.gl/DZd2yCgrp4CzVrni9",
+  "AGM Mall Lembuswana": "https://maps.app.goo.gl/e6Z7DnGi2DDGtJtZA",
+  "AGM Mall Samarinda Square": "https://maps.app.goo.gl/cc82P97bxeyLUBux8",
+};
+
+const detailButtons = document.querySelectorAll(".detail-btn");
+
+detailButtons.forEach((button, index) => {
+  button.addEventListener("click", function () {
+    const card = this.closest(".card");
+    const outletName = card.querySelector("h3").textContent;
+
+    const mapsLink = googleMapsLinks[outletName];
+
+    if (mapsLink && mapsLink !== "") {
+      window.open(mapsLink, "_blank");
+    } else {
+      alert("Link Google Maps untuk " + outletName + " belum tersedia");
+    }
+  });
 });
