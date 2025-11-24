@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <title>Ayam Goreng Monas</title>
@@ -135,4 +135,198 @@
       </div>
     </section>
   </body>
-</html>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ayam Goreng Monas — Home</title>
+
+  <!-- CSS split: header.css, hero.css, home.css -->
+  <link rel="stylesheet" href="./style/header.css" />
+  <link rel="stylesheet" href="./style/hero.css" />
+  <link rel="stylesheet" href="./style/home.css" />
+
+  <link rel="icon" type="image/png" sizes="16x16" href="./source/Logo.png" />
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-left">
+      <div class="restaurant-logo"><img src="./source/Logo.png" alt="logo"/></div>
+      <div class="restaurant-name">AYAM GORENG MONAS</div>
+    </div>
+
+    <nav class="header-right" aria-label="Main Navigation">
+      <!-- <a href="#hero" class="nav home">Home</a> -->
+      <a href="#menu" class="nav menu">Menu</a>
+      <a href="#why" class="nav why">Kenapa Kami</a>
+      <a href="#about" class="nav about">Tentang</a>
+      <a href="#location" class="nav location">Lokasi</a>
+      <a href="#review" class="nav review">Review</a>
+      <a href="#promo" class="nav promo">Promo</a>
+    </nav>
+
+    <div class="hamburger" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="carousel-container">
+      <div class="image-carousel">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img src="./Source/Background/Banner.png" alt="Poster 1" />
+            <!-- <div class="hero-overlay">
+              <h1 class="hero-title">Rasa yang Tiada Tanding</h1>
+              <p class="hero-sub">Ayam goreng renyah dengan bumbu rahasia. Siap memanjakan lidahmu.</p>
+              <div class="hero-ctas">
+                <a href="menu.html" class="btn btn-primary">Lihat Menu</a>
+                <a href="https://wa.me/6281234567890" class="btn btn-secondary" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="./Source/Background/Back1.jpg" alt="Background" />
+            <div class="hero-overlay">
+              <h1 class="hero-title">Nikmati Paket Hemat</h1>
+              <p class="hero-sub">Pilihan paket untuk keluarga & mahasiswa. Harga ramah kantong.</p>
+              <div class="hero-ctas">
+                <a href="#promo" class="btn btn-primary">Cek Promo</a>
+                <a href="menu.html" class="btn btn-secondary">Lihat Menu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-dots" role="tablist" aria-label="Carousel Navigation">
+        <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+        <button class="dot" data-index="1" aria-label="Slide 2"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME / WELCOME (contains menu preview + CTA) -->
+  <section class="home">
+    <div class="home-container">
+      <div class="welcome-section">
+        <h2 class="tagline">Rasa yang tiada tanding</h2>
+        <p class="description">Kami menyajikan ayam goreng dengan resep turun-temurun, bumbu meresap, dan tekstur yang selalu renyah. Cocok untuk santap bersama keluarga atau teman.</p>
+        <div class="cta-buttons"><a href="menu.html" class="btn btn-primary">Lihat Menu</a><a href="location.html" class="btn btn-secondary">Temukan Kami</a></div>
+      </div>
+
+      <!-- Menu Unggulan (card style #2: image top, text bottom) -->
+      <div id="menu" class="menu-section">
+        <h3 class="section-heading">Menu Unggulan</h3>
+        <div class="menu-grid">
+          <article class="menu-card">
+            <img src="./Source/Daftar menu/Bakwan.png" alt="Bakwan">
+            <div class="menu-body">
+              <h4>Bakwan</h4>
+              <!-- <p class="price">Rp 28.000</p> -->
+              <a class="menu-btn" href="#">Pesan</a>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Source/Daftar menu/Bakwan.png" alt="Ayam Goreng Sambal">
+            <div class="menu-body">
+              <h4>Ayam Goreng Sambal</h4>
+              <p class="price">Rp 30.000</p>
+              <a class="menu-btn" href="#">Pesan</a>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="./Source/Daftar menu/Bakwan.png" alt="Paket Hemat">
+            <div class="menu-body">
+              <h4>Paket Hemat</h4>
+              <p class="price">Mulai Rp 45.000</p>
+              <a class="menu-btn" href="#">Pesan</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Kenapa Kami -->
+      <section id="why" class="why-us">
+        <h3 class="section-heading">Kenapa Memilih Kami?</h3>
+        <div class="why-grid">
+          <div class="why-item"><strong>Resep Otentik</strong><p>Bumbu turun-temurun, cita rasa khas.</p></div>
+          <div class="why-item"><strong>Bahan Segar</strong><p>Komitmen kualitas dari bahan terbaik.</p></div>
+          <div class="why-item"><strong>Pelayanan Cepat</strong><p>Pesanan cepat sampai meja atau ke tanganmu.</p></div>
+        </div>
+      </section>
+
+      <!-- Tentang Kami -->
+      <section id="about" class="about">
+        <div class="about-inner">
+          <div class="about-text">
+            <h3 class="section-heading">Tentang Ayam Goreng Monas</h3>
+            <p>Kami berdiri sejak 2005 dengan misi menyajikan ayam goreng terenak yang bisa dinikmati semua kalangan. Dari dapur ke meja, setiap porsi dibuat dengan ketelitian dan cinta.</p>
+          </div>
+          <div class="about-img"><img src="./Source/About/about-1.jpg" alt="Tentang Kami"></div>
+        </div>
+      </section>
+
+      <!-- Lokasi & Jam -->
+      <section id="location" class="location">
+        <h3 class="section-heading">Lokasi & Jam Operasional</h3>
+        <div class="location-inner">
+          <div class="map">
+            <!-- placeholder, replace with actual Google Maps embed -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18" aria-hidden="false" title="Map" loading="lazy"></iframe>
+          </div>
+          <div class="opening">
+            <p><strong>Alamat:</strong> Jl. Contoh Kuliner No.123, Jakarta</p>
+            <p><strong>Jam Buka:</strong> Setiap Hari 10:00 - 22:00</p>
+            <a href="https://wa.me/6281234567890" class="btn btn-primary" target="_blank" rel="noopener">Pesan Sekarang</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Review -->
+      <section id="review" class="reviews">
+        <h3 class="section-heading">Apa Kata Mereka</h3>
+        <div class="review-grid">
+          <blockquote class="review-card">“Ayamnya gurih, bumbunya nempel banget. Recomended!” <span class="at">— Rina</span></blockquote>
+          <blockquote class="review-card">“Pelayanan ramah dan cepat. Harga pas.” <span class="at">— Budi</span></blockquote>
+          <blockquote class="review-card">“Paket hematnya enak untuk keluarga kecil kami.” <span class="at">— Siti</span></blockquote>
+        </div>
+      </section>
+
+      <!-- Promo -->
+      <section id="promo" class="promo">
+        <h3 class="section-heading">Promo & Event</h3>
+        <div class="promo-inner">
+          <p>Diskon 20% khusus pembelian paket keluarga setiap Jumat — hanya di outlet terpilih!</p>
+          <a href="#" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="./source/Logo.png" alt="logo" />
+        <p>Enak Tiada Tanding</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#menu">Menu</a>
+        <a href="#promo">Promo</a>
+        <a href="#location">Lokasi</a>
+      </nav>
+      <p class="copyright">© 2025 Ayam Goreng Monas. Hak Cipta Dilindungi.</p>
+    </div>
+  </footer>

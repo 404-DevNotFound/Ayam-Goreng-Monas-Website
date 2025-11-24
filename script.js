@@ -99,3 +99,36 @@ detailButtons.forEach((button, index) => {
     }
   });
 });
+
+
+/* script.js */
+(function(){
+  // Hamburger toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.header-right');
+  hamburger && hamburger.addEventListener('click', ()=>{
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('show');
+  });
+
+  // Simple carousel (auto + dots)
+  const track = document.querySelector('.carousel-track');
+  const dots = Array.from(document.querySelectorAll('.dot'));
+  let index = 0;
+  const slidesCount = track ? track.children.length : 0;
+  function goTo(i){
+    if(!track) return;
+    index = (i + slidesCount) % slidesCount;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach(d=>d.classList.remove('active'));
+    dots[index] && dots[index].classList.add('active');
+  }
+  let autoplay = setInterval(()=> goTo(index+1), 5000);
+
+  dots.forEach(btn=> btn.addEventListener('click', ()=>{ goTo(Number(btn.dataset.index)); clearInterval(autoplay); autoplay = setInterval(()=> goTo(index+1), 5000); }));
+
+  // Optional: pause on hover
+  const carousel = document.querySelector('.image-carousel');
+  carousel && carousel.addEventListener('mouseenter', ()=> clearInterval(autoplay));
+  carousel && carousel.addEventListener('mouseleave', ()=> autoplay = setInterval(()=> goTo(index+1), 5000));
+})();

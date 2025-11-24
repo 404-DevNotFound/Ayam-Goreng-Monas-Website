@@ -1,4 +1,4 @@
-.carousel-container {
+/* .carousel-container {
   width: 100%;
   position: relative;
 }
@@ -55,4 +55,31 @@
   background: #ff4500;
   width: 30px;
   border-radius: 6px;
+} */
+
+/* hero.css */
+.carousel-container{ width:100%; position:relative; overflow:hidden }
+.image-carousel{ width:100%; height:78vh; min-height:380px; max-height:680px; position:relative }
+.carousel-track{ display:flex; height:100%; transition:transform .6s ease-in-out }
+.carousel-slide{ flex:0 0 100%; position:relative }
+.carousel-slide img{ width:100%; height:100%; object-fit:cover; display:block }
+
+/* overlay content */
+.hero-overlay{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); color:#fff; text-align:center; padding:24px; width:90%; max-width:760px }
+.hero-title{ font-size:2.6rem; margin:0 0 12px; font-weight:800; text-shadow: 0 6px 18px rgba(0,0,0,0.45) }
+.hero-sub{ font-size:1.05rem; margin:0 0 18px }
+.hero-ctas{ display:flex; gap:12px; justify-content:center }
+
+.carousel-dots{ position:absolute; bottom:18px; left:50%; transform:translateX(-50%); display:flex; gap:8px }
+.dot{ width:10px; height:10px; border-radius:50px; background:rgba(255,255,255,0.45); border:none; transition:all .25s }
+.dot:hover{ transform:scale(1.15); background:rgba(255,255,255,0.85) }
+.dot.active{ width:26px; background:#ff4500 }
+
+/* gradient to make text pop */
+.carousel-slide::after{ content:""; position:absolute; inset:0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)); }
+
+@media (max-width:768px){
+  .hero-title{ font-size:1.6rem }
+  .hero-sub{ font-size:0.95rem }
+  .image-carousel{ height:56vh }
 }
