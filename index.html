@@ -26,7 +26,7 @@
       <a href="index.html" class="nav menu">Home</a>
       <a href="story.html" class="nav why">Kisah Kami</a>
       <a href="menu.html" class="nav about">Menu</a>
-      <a href="news.html" class="nav promo">Berita</a>
+      <a href="news.html" class="nav-promo">Berita</a>
       <a href="review.php" class="nav review">Review</a>
       <a href="location.html" class="nav location">Lokasi</a>
     </nav>
@@ -95,7 +95,7 @@
       <div class="welcome-section">
         <h2 class="tagline">Rasa yang Tiada Tanding</h2>
         <p class="description">
-          Kami menyajikan ayam goreng dengan resep turun-temurun, bumbu meresap, dan tekstur yang selalu renyah. Cocok untuk santap bersama keluarga atau teman
+          Kami menyajikan ayam goreng dengan resep turun-temurun, bumbu meresap, dan tekstur yang selalu renyah. Cocok untuk disantap bersama keluarga atau teman
         </p>
         <div class="cta-buttons">
           <!-- <a href="menu.html" class="btn btn-primary">Lihat Menu</a> -->
@@ -104,7 +104,10 @@
 
       <!-- Menu Unggulan (card style #2: image top, text bottom) -->
       <div id="menu" class="menu-section">
-        <h3 class="section-heading">Menu Unggulan</h3>
+        <div class="menu-name">
+          <h3 class="section-heading">Menu Unggulan</h3>
+          <a class="menu-direct" href="menu.html">Lihat Semua Menu</a>
+        </div>
         <div class="menu-grid">
           <article class="menu-card">
             <img src="./Source/Daftar menu/Bakwan.png" alt="Bakwan">
@@ -127,7 +130,7 @@
           <article class="menu-card">
             <img src="./Source/Daftar menu/Es Blewah.png" alt="blewah">
             <div class="menu-body">
-              <h4>Paket Hemat</h4>
+              <h4>Es Blewah</h4>
               <p class="price">Mulai Rp 45.000</p>
               <a class="menu-btn" href="#">Pesan</a>
             </div>
@@ -136,14 +139,14 @@
       </div>
 
       <!-- Kenapa Kami -->
-      <section id="why" class="why-us">
+      <!-- <section id="why" class="why-us">
         <h3 class="section-heading">Kenapa Memilih Kami?</h3>
         <div class="why-grid">
           <div class="why-item"><strong>Resep Otentik</strong><p>Bumbu turun-temurun, cita rasa khas.</p></div>
           <div class="why-item"><strong>Bahan Segar</strong><p>Komitmen kualitas dari bahan terbaik.</p></div>
           <div class="why-item"><strong>Pelayanan Cepat</strong><p>Pesanan cepat sampai meja atau ke tanganmu.</p></div>
         </div>
-      </section>
+      </section> -->
 
       <!-- Tentang Kami
       <section id="about" class="about">
@@ -185,9 +188,20 @@
       <!-- Promo -->
       <section id="promo" class="promo">
         <h3 class="section-heading">Promo & Event</h3>
+        <div class="promo-image-cards">
+          <div class="promo-image">
+            <img src="./Source/Background/Banner.png" alt="promo" />
+          </div>
+          <div class="promo-image">
+            <img src="./Source/Background/Banner1.png" alt="promo" />
+          </div>
+          <div class="promo-image">
+            <img src="./Source/Background/Banner2.png" alt="promo" />
+          </div>
+        </div>
         <div class="promo-inner">
-          <p>Diskon 20% khusus pembelian paket keluarga setiap Jumat — hanya di outlet terpilih!</p>
-          <a href="#" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
+          <!-- <p>Diskon 20% khusus pembelian paket keluarga setiap Jumat — hanya di outlet terpilih!</p> -->
+          <a href="news.html" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
         </div>
       </section>
     </div>
@@ -195,17 +209,60 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
+    <div class="footer-container">
+      <div class="footer-logo">
         <img src="./source/Logo.png" alt="logo" />
-        <p>Enak Tiada Tanding</p>
+        <p class="footer-slogan">Enak Tiada Tanding</p>
       </div>
-      <nav class="footer-links">
-        <a href="#menu">Menu</a>
-        <a href="#promo">Promo</a>
-        <a href="#location">Lokasi</a>
-      </nav>
-      <p class="copyright">© 2025 Ayam Goreng Monas. Hak Cipta Dilindungi.</p>
+
+      <div class="footer-column">
+          <h3>Link</h3>
+          <ul>
+            <li><a href="story.html">Kisah</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="news.html">Berita</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-column">
+          <h3>Pemesanan</h3>
+          <ul>
+            <li>
+              <a href="https://wa.me/6281234567890" target="_blank">WhatsApp</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Hubungi</h3>
+          <ul>
+            <li>
+              <a href="https://wa.me/6281234567890" target="_blank">WhatsApp</a>
+            </li>
+            <li><a href="mailto:ayamgorengmonas@gmail.com">Email</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <a href="#" class="social-icon">
+            <img src="./source/instagram.svg" alt="Instagram" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="./source/tiktok.svg" alt="TikTok" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="./source/x.svg" alt="X" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="./source/facebook.svg" alt="Facebook" />
+          </a>
+        </div>
+      </div>
+
+    <div class="footer-bottom">
+      <p>
+        © 2025 Ayam Goreng Monas. Hak Cipta Dilindungi
+      </p>
     </div>
   </footer>
 </body>
